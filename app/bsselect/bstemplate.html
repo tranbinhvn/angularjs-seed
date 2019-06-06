@@ -1,0 +1,14 @@
+<div class="btn-group">
+    <button class="btn button-label btn-info">{{currentItemLabel}}</button>
+    <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" style="max-height:300px;overflow-y:scroll">
+        <li ng-repeat="item in items" ng-click="cancelClose($event)" ng-class="{red: hover,blue:setCheckboxChecked(item)}" ng-mouseenter="hover = true" ng-mouseleave="hover = false">
+            <div class="input-group">
+                <input type="checkbox" ng-checked="setCheckboxChecked(item)" ng-click="selectVal(item,$index)">
+                <a href="" tabindex="-1"> {{item[textField]}}</a>
+            </div>
+        </li>
+    </ul>
+</div>
